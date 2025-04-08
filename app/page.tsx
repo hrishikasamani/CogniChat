@@ -1,6 +1,4 @@
 import CompanionCard from '@/components/CompanionCard'
-import { Button } from '@/components/ui/button'
-import React from 'react'
 
 const Page = () => {
   return (
