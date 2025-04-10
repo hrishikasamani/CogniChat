@@ -1,4 +1,6 @@
+import CTA from '@/components/CTA'
 import CompanionCard from '@/components/CompanionCard'
+import CompanionList from '@/components/CompanionList'
 
 const Page = () => {
   return (
@@ -8,6 +10,11 @@ const Page = () => {
         <CompanionCard />
         <CompanionCard />
         <CompanionCard />
+      </section>
+
+      <section className='home-section'>
+        <CompanionList />
+        <CTA />
       </section>
     </main>
   )
