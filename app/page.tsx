@@ -2,7 +2,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>Page</div>
+    <h1 className='text-2xl underline'>Welcome to CogniChat, my SaaS App</h1>
   )
 }
 
