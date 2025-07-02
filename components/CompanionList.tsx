@@ -8,7 +8,13 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
-const CompanionList = () => {
+interface CompanionsListProps {
+  title: string;
+  companions?: Companion[];
+  classNames?: string;
+}
+
+const CompanionList = ({title, companions, classNames}: CompanionsListProps) => {
   return (
     <article>
       <h2>Recent Sessions</h2>
