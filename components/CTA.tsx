@@ -1,10 +1,8 @@
-import React from 'react'
-
 const CTA = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='cta-section'>
+      <div className='cta-badge'>Start learning your way.</div>
+    </section>
   )
 }
 
