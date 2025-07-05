@@ -1,7 +1,7 @@
 const CompanionForm = () => {
   return (
     <div>
-      
+      CompanionForm
     </div>
   )
 }
