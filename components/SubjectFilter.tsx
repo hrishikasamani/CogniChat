@@ -2,6 +2,9 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { formUrlQuery, removeKeysFromUrlQuery } from '@jsmastery/utils';
+import { Select, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { SelectContent } from '@radix-ui/react-select';
+import { subjects } from '@/constants';
 
 const SubjectFilter = () => {
   const router = useRouter();
@@ -28,8 +31,24 @@ const SubjectFilter = () => {
   }, [subject]);
 
   return (
-    <div>SubjectFilter</div>
-  )
-}
+    <Select onValueChange={setSubject} value={subject}>
+      <SelectTrigger className="input capitalize">
+        <SelectValue placeholder="Subject" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value='all'>All subjects</SelectItem>
+        {subjects.map((subject) => (
+          <SelectItem
+            value={subject}
+            key={subject}
+            className="capitalize"
+          >
+            {subject}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+};
 
 export default SubjectFilter
