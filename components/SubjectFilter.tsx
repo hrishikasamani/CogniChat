@@ -2,8 +2,7 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { formUrlQuery, removeKeysFromUrlQuery } from '@jsmastery/utils';
-import { Select, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { SelectContent } from '@radix-ui/react-select';
+import { Select, SelectItem, SelectTrigger, SelectValue, SelectContent } from './ui/select';
 import { subjects } from '@/constants';
 
 const SubjectFilter = () => {
