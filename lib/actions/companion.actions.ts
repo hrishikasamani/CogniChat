@@ -45,3 +45,6 @@ export const getAllCompanions = async ({ limit = 10, page = 1, subject, topic }:
 
     return companions;
 }
+
+export const getCompanion = async(id: string) => {
+}
