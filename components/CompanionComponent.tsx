@@ -1,5 +1,5 @@
 'use client'
-import { cn, getSubjectColor } from '@/lib/utils'
+import { cn, configureAssistant, getSubjectColor } from '@/lib/utils'
 import { vapi } from '@/lib/vapi.sdk';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react'
@@ -63,6 +63,16 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
   }
 
   const handleCall = async () => {
+    setCallStatus(CallStatus.CONNECTING);
+    const assistantOverrides = {
+      variableValues: {
+        subject, topic, style
+      },
+      clientMessages: ['transcript'],
+      serverMessages: [],
+    }
+    // @ts-expect-error
+    vapi.start(configureAssistant(voice, style), assistantOverrides);
   }
 
   const handleDisconnect = async () => {
