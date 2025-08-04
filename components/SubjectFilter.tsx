@@ -2,9 +2,7 @@ import React from 'react'
 
 const SubjectFilter = () => {
   return (
-    <div>
-      
-    </div>
+    <div>SubjectFilter</div>
   )
 }
 
