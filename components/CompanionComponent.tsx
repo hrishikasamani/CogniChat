@@ -108,6 +108,13 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
           </button>
         </div>
       </section>
+
+      <section className='transcript'>
+        <div className='transcript-message no-scrollbar'>
+          MESSAGES
+        </div>
+        <div className='transcript-fade'/>
+      </section>
     </section>
   )
 }
