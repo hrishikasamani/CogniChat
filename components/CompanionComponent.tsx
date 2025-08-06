@@ -62,6 +62,12 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
     setIsMuted(!isMuted);
   }
 
+  const handleCall = async () => {
+  }
+
+  const handleDisconnect = async () => {
+  }
+
   return (
     <section className='flex flex-col h-[70vh]'>
       <section className='flex gap-8 max-sm:flex-col'>
