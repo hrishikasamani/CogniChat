@@ -16,6 +16,7 @@ enum CallStatus{
 const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }: CompanionComponentProps) => {
   const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
@@ -55,6 +56,12 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
 
   }, []);
 
+  const toggleMicrophone = () => {
+    const isMuted = vapi.isMuted();
+    vapi.setMuted(!isMuted);
+    setIsMuted(!isMuted);
+  }
+
   return (
     <section className='flex flex-col h-[70vh]'>
       <section className='flex gap-8 max-sm:flex-col'>
@@ -75,6 +82,16 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
               />
             </div>
           </div>
+          <p className='font-bold text-2xl'>{name}</p>
+        </div>
+        <div className='user-section'>
+          <div className='user-avatar'>
+            <Image src={userImage} alt={userName} width={130} height={130} className='rounded-lg' />
+            <p className='font-bold text-2xl'>
+              {userName}
+            </p>
+          </div>
+          <button className='btn-mic' onClick={toggleMicrophone}></button>
         </div>
       </section>
     </section>
