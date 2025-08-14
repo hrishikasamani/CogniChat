@@ -83,7 +83,24 @@ export const getRecentSessions =async (limit = 10) => {
 
   if(error) throw new Error(error.message);
 
-  return data.map(({ companions }) => companions);
+  const companions = data
+  .map(({ companions }) =>
+    Array.isArray(companions) ? companions[0] : companions
+  )
+  .filter(Boolean);
+  const unique = [];
+  const seen = new Set();
+
+  for (const c of companions) {
+    if (!seen.has(c.id)) {
+      seen.add(c.id);
+      unique.push(c);
+    }
+  }
+
+  return unique;
+
+  // return data.map(({ companions }) => companions);
 }
 
 export const getUserSessions =async (userId: string, limit = 10) => {
@@ -97,5 +114,22 @@ export const getUserSessions =async (userId: string, limit = 10) => {
 
   if(error) throw new Error(error.message);
 
-  return data.map(({ companions }) => companions);
+  const companions = data
+  .map(({ companions }) =>
+    Array.isArray(companions) ? companions[0] : companions
+  )
+  .filter(Boolean);
+  const unique = [];
+  const seen = new Set();
+
+  for (const c of companions) {
+    if (!seen.has(c.id)) {
+      seen.add(c.id);
+      unique.push(c);
+    }
+  }
+
+  return unique;
+
+  // return data.map(({ companions }) => companions);
 }
