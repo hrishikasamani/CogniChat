@@ -15,9 +15,10 @@ interface CompanionsListProps {
   title: string;
   companions?: Companion[];
   classNames?: string;
+  keyPrefix?: string;
 }
 
-const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) => {
+const CompanionsList = ({ title, companions, classNames, keyPrefix }: CompanionsListProps) => {
   return (
     <article className={cn('companion-list', classNames)}>
       <h2 className="font-bold text-3xl">{title}</h2>
@@ -31,7 +32,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
         </TableHeader>
         <TableBody>
           {companions?.map(({id, subject, name, topic, duration}) => (
-            <TableRow key={id}>
+            <TableRow key={`${keyPrefix}-${id}`}>
               <TableCell>
                 <Link href={`/companions/${id}`}>
                   <div className="flex items-center gap-2">
