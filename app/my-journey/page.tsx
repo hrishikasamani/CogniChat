@@ -15,6 +15,8 @@ const Profile = async () => {
   if(!user) redirect('/sign-in');
 
   const companions = await getUserCompanions(user.id);
+  console.log("clerk user id:", user.id)
+
   const sessionHistory = await getUserSessions(user.id);
 
   return (
@@ -38,6 +40,13 @@ const Profile = async () => {
               <p className="text-2xl font-bold">{sessionHistory.length}</p>
             </div>
             <div>Lessons completed</div>
+          </div>
+          <div className="border border-black rounded-lg p-3 gap-2 flex flex-col h-fit">
+            <div className="flex gap-2 items-center">
+              <Image src="/icons/cap.svg" alt="cap" width={22} height={22} />
+              <p className="text-2xl font-bold">{companions.length}</p>
+            </div>
+            <div>Companions created</div>
           </div>
         </div>
       </section>
