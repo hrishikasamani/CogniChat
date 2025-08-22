@@ -31,6 +31,15 @@ const Profile = async () => {
             </p>
           </div>
         </div>
+        <div className="flex gap-4">
+          <div className="border border-black rounded-lg p-3 gap-2 flex flex-col h-fit">
+            <div className="flex gap-2 items-center">
+              <Image src="/icons/check.svg" alt="checkmark" width={22} height={22} />
+              <p className="text-2xl font-bold">{sessionHistory.length}</p>
+            </div>
+            <div>Lessons completed</div>
+          </div>
+        </div>
       </section>
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
