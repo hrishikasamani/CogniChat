@@ -133,3 +133,32 @@ export const getUserSessions =async (userId: string, limit = 10) => {
 
   // return data.map(({ companions }) => companions);
 }
+
+export const getUserCompanions =async (userId: string) => {
+  const supabase = createSupabaseClient();
+  const { data, error } = await supabase
+    .from('companions')
+    .select()
+    .eq('author', userId)
+
+  if(error) throw new Error(error.message);
+
+  const companions = data
+  .map(({ companions }) =>
+    Array.isArray(companions) ? companions[0] : companions
+  )
+  .filter(Boolean);
+  const unique = [];
+  const seen = new Set();
+
+  for (const c of companions) {
+    if (!seen.has(c.id)) {
+      seen.add(c.id);
+      unique.push(c);
+    }
+  }
+
+  return unique;
+
+  // return data.map(({ companions }) => companions);
+}
