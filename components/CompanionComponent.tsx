@@ -2,7 +2,12 @@
 import { cn, getSubjectColor } from '@/lib/utils'
 import React, { useState } from 'react'
 
-enum CallStatus{}
+enum CallStatus{
+  INACTIVE = 'INACTIVE',
+  CONNECTING = 'CONNECTING',
+  ACTIVE = 'ACTIVE',
+  FINISHED = 'FINISHED',
+}
 
 const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }: CompanionComponentProps) => {
   const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
