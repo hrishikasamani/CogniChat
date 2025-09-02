@@ -1,7 +1,12 @@
+'use client'
 import { cn, getSubjectColor } from '@/lib/utils'
-import React from 'react'
+import React, { useState } from 'react'
 
-const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }) => {
+enum CallStatus{}
+
+const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }: CompanionComponentProps) => {
+  const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
+
   return (
     <section className='flex flex-col h-[70vh]'>
       <section className='flex gap-8 max-sm:flex-col'>
