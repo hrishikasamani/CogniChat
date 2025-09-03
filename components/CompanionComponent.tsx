@@ -1,12 +1,14 @@
-import { getSubjectColor } from '@/lib/utils'
+import { cn, getSubjectColor } from '@/lib/utils'
 import React from 'react'
 
-const CompanionComponent = () => {
+const CompanionComponent = ({ companionId, subject, topic, name, userName, userImage, style, voice }) => {
   return (
     <section className='flex flex-col h-[70vh]'>
       <section className='flex gap-8 max-sm:flex-col'>
         <div className='companion-section'>
-          <div className='companion-avatar' style={{ backgroundColor: getSubjectColor(subject) }}></div>
+          <div className='companion-avatar' style={{ backgroundColor: getSubjectColor(subject) }}>
+            <div className={cn('absolute transition-opacity duration-1000')}></div>
+          </div>
         </div>
       </section>
     </section>
