@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
 import { useParams } from 'next/navigation'
 
 const SearchInput = () => {
+  const params = useParams();
   return (
     <div>
       
