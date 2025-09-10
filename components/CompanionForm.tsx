@@ -3,6 +3,17 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { Button } from '@/components/ui/button'
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 
 const formSchema = z.object({
     name: z.string().min(minLength: 1, { message: 'Companion is required' }),
@@ -18,12 +29,12 @@ const CompanionForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name,
-      subject,
-      topic
-      voice,
-      style
-      duration
+      name: '',
+      subject: '',
+      topic: '',
+      voice: '',
+      style: '',
+      duration: 15,
     },
   })
 
