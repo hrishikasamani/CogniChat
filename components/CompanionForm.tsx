@@ -47,20 +47,109 @@ const CompanionForm = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
         <FormField
           control={form.control}
-          name='name'
+          name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Companion name</FormLabel>
               <FormControl>
-                <Input placeholder='shadcn' {...field} />
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
+        />
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Subject</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='name'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Companion name</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='name'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Companion name</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='name'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Companion name</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='name'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Companion name</FormLabel>
+              <FormControl>
+                <Input 
+                  placeholder="Enter the companion name" 
+                  {...field} 
+                  className="input"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type='submit'>Submit</Button>
       </form>
+    </Form>
   )
 }
 
