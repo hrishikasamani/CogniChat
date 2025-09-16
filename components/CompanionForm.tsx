@@ -44,7 +44,7 @@ const CompanionForm = () => {
 
   return (
     <div>
-      CompanionForm
+      CompanionForm is a good form!
     </div>
   )
 }
