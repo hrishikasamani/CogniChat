@@ -27,9 +27,10 @@ const formSchema = z.object({
   duration: z.coerce.number().min(1, { message: 'Duration is required.' }),
 })
 
-const CompanionForm = () => {
+type FormSchema = z.infer<typeof formSchema>
 
-  const form = useForm<z.infer<typeof formSchema>>({
+const CompanionForm = () => {
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
@@ -41,7 +42,7 @@ const CompanionForm = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: FormSchema) {
     console.log(values)
   }
 
