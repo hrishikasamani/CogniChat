@@ -45,7 +45,6 @@ const CompanionForm = () => {
   return (
     <div>
       CompanionForm is a good form!
-      Oh no!
     </div>
   )
 }
