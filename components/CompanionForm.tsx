@@ -190,7 +190,7 @@ const CompanionForm = () => {
             </FormItem>
           )}
         />
-        <Button type='submit'>Submit</Button>
+        <Button type="submit" className="w-full cursor-pointer">Build Your Companion</Button>
       </form>
     </Form>
   )
