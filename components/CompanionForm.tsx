@@ -174,30 +174,14 @@ const CompanionForm = () => {
         />
         <FormField
           control={form.control}
-          name='name'
+          name="duration"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Companion name</FormLabel>
+              <FormLabel>Estimated session duration in minutes</FormLabel>
               <FormControl>
-                <Input 
-                  placeholder="Enter the companion name" 
-                  {...field} 
-                  className="input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name='name'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Companion name</FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="Enter the companion name" 
+                <Input
+                  type="number"
+                  placeholder="15" 
                   {...field} 
                   className="input"
                 />
