@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { subjects } from '@/constants'
+import { Textarea } from './ui/textarea'
 
 const formSchema = z.object({
     name: z.string().min(minLength: 1, { message: 'Companion is required' }),
@@ -98,13 +99,13 @@ const CompanionForm = () => {
         />
         <FormField
           control={form.control}
-          name='name'
+          name="topic"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Companion name</FormLabel>
+              <FormLabel>What should the companion help with</FormLabel>
               <FormControl>
-                <Input 
-                  placeholder="Enter the companion name" 
+                <Textarea 
+                  placeholder="Ex. Derivatives & Integrals" 
                   {...field} 
                   className="input"
                 />
@@ -113,23 +114,7 @@ const CompanionForm = () => {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name='name'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Companion name</FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="Enter the companion name" 
-                  {...field} 
-                  className="input"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        
         <FormField
           control={form.control}
           name='name'
