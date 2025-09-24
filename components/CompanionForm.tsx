@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { minLength, z } from 'zod'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -19,17 +19,18 @@ import { subjects } from '@/constants'
 import { Textarea } from './ui/textarea'
 
 const formSchema = z.object({
-    name: z.string().min(minLength: 1, { message: 'Companion is required' }),
-    subject: z.string().min(minLength: 1, { message: 'Subject is required' }),
-    topic: z.string().min(minLength: 1, { message: 'Topic is required' }),
-    voice: z.string().min(minLength: 1, { message: 'Voice is required' }),
-    style: z.string().min(minLength: 1, { message: 'Style is required' }),
-    duration: z.coerce.number().min( value: 1, { message: 'Duration is required.'}),
+  name: z.string().min(1, { message: 'Companion is required' }),
+  subject: z.string().min(1, { message: 'Subject is required' }),
+  topic: z.string().min(1, { message: 'Topic is required' }),
+  voice: z.string().min(1, { message: 'Voice is required' }),
+  style: z.string().min(1, { message: 'Style is required' }),
+  duration: z.coerce.number().min(1, { message: 'Duration is required.' }),
 })
 
-const CompanionForm = () => {
+type FormSchema = z.infer<typeof formSchema>
 
-  const form = useForm<z.infer<typeof formSchema>>({
+const CompanionForm = () => {
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
@@ -41,7 +42,7 @@ const CompanionForm = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: FormSchema) {
     console.log(values)
   }
 
