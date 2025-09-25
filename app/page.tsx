@@ -1,6 +1,7 @@
 import CTA from '@/components/CTA'
 import CompanionCard from '@/components/CompanionCard'
 import CompanionList from '@/components/CompanionList'
+import NavBar from '@/components/NavBar'
 import { recentSessions } from '@/constants'
 
 const Page = () => {
