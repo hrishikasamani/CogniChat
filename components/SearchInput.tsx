@@ -19,6 +19,12 @@ const SearchInput = () => {
         width={15} 
         height={15}
       />
+      <input
+        placeholder='Search companions ...'
+        className='outline-none'
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
     </div>
   )
 }
