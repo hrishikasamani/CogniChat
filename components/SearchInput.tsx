@@ -1,15 +1,21 @@
 'use client'
 import Image from 'next/image';
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const SearchInput = () => {
-  const params = useParams();
+  const pathname = useParams();
   const router = useRouter();
   const searchParams = useSearchParams();
   const query = searchParams.get('topic') || '';
 
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    if(searchQuery) {
+      router.push('/currentRoute?topic=${searchQuery}');
+    }
+  }, [searchQuery, router, searchParams, pathname]);
 
   return (
     <div className='relative border border-black rounded-lg items-center flex gap-2 px-2 py-1 h-fit'>
