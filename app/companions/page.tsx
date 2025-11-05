@@ -6,6 +6,9 @@ const CompanionsLibrary = async({ searchParams }: SearchParams) => {
   const subject = filters.subject ? filters.subject : '';
   const topic = filters.topic ? filters.topic : '';
 
+  const companions = await getAllCompanions({ subject, topic });
+  console.log(companions);
+
   return (
     <div>
       CompanionsLibrary
