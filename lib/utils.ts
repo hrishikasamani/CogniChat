@@ -55,7 +55,7 @@ export const configureAssistant = (voice: string, style: string) => {
       ],
     },
     clientMessages: [],
-    serverMessages: "conversation-update",
+    serverMessages: [],
   };
   return vapiAssistant;
 };
